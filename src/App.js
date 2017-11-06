@@ -6,7 +6,7 @@ class App extends Component{
 
   componentDidMount() {}
 
-  componentShouldUpdate() {
+  shouldComponentUpdate() {
     return true;
   }
   render() {
