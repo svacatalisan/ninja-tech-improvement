@@ -23,6 +23,6 @@ export function setComponentsDependencies(dependecyTree) {
 }
 
 /* Set component dependency based on defined dependencies in dependecyTree */
-export function setComponentDependency (component, dependency) {
+export function setComponentDependency(component, dependency) {
   return {};
 }

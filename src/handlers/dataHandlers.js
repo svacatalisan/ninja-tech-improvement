@@ -5,6 +5,6 @@
 /* Dont't have yet an exact use case, but was part of initial archi.
 * To think if necessary.
 * */
-export function manageRequestResponse(){
+export function manageRequestResponse() {
   return {};
 }

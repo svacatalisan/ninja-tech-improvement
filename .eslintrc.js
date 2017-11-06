@@ -1,5 +1,6 @@
 module.exports = {
   "extends": [
+    "react-app",
     "airbnb",
     "plugin:import/errors",
     "plugin:import/warnings"

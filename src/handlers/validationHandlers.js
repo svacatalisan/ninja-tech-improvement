@@ -2,13 +2,13 @@
  * Created by alexcatalisan on 03.11.2017.
  */
 
-export const validatorManager {
-  applyValidators: function(componentName, componentValue, validators) {
-    let errors = {};
+export const validatorManager = {
+  applyValidators(componentName, componentValue, validators) {
+    const errors = {};
     return errors;
-  }
+  },
 
-  regex: function (componentName, componentValue, regexExpression) {
+  regex(componentName, componentValue, regexExpression) {
     return {};
   }
-}
+};

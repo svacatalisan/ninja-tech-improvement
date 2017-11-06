@@ -5,3 +5,4 @@
 export * from './framework';
 export * from './utilities';
 export * from './templateInterpolationParser';
+export * from './i18n';

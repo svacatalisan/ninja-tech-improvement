@@ -7,7 +7,7 @@ const webpack = require('webpack');
 const rootConfig = require('./config/webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const configEnv = 'development';//process.env.NODE_ENV;
+const configEnv = 'development';// process.env.NODE_ENV;
 
 const entries = [
   path.normalize(`${__dirname}/src/index`)
@@ -36,14 +36,14 @@ module.exports = {
         include: path.normalize(`${__dirname}/src/modules`)
       },
       {
-        test:/\.js$/,
-        loader:'babel-loader',
+        test: /\.js$/,
+        loader: 'babel-loader',
         exclude: '/node_modules/',
         include: path.join(__dirname, 'src')
       },
       {
-        test:/\.jsx$/,
-        loader:'babel-loader',
+        test: /\.jsx$/,
+        loader: 'babel-loader',
         exclude: '/node_modules/',
         include: path.join(__dirname, 'src')
       },
@@ -61,14 +61,17 @@ module.exports = {
         loader: ExtractTextPlugin.extract({
           use: ['css-loader'],
           fallback: 'style-loader'
-        }),
+        })
       }
     ]
   },
   plugins: [
+    new webpack.LoaderOptionsPlugin({
+      debug: true
+    }),
     new webpack.DefinePlugin(rootConfig),
     new ExtractTextPlugin({
-      filename: `${__dirname}/public/css/styles.css`,
+      filename: `${__dirname}/public/css/styles.css`
     }),
     new webpack.LoaderOptionsPlugin({
       options: {

@@ -2,18 +2,6 @@
  * Created by alexcatalisan on 03.11.2017.
  */
 
-export function createCookie() {
-  return {}
-}
-
-export function getCookie() {
-  return {}
-}
-
-export function deleteCookie() {
-  return {};
-}
-
 /* get data from server */
 export function get(payload) {
   return {};
@@ -33,7 +21,7 @@ export function flatten(data) {
     } else if (Array.isArray(cur)) {
       for(var i=0, l=cur.length; i<l; i++)
         recurse(cur[i], prop ? prop+"."+i : ""+i);
-      if (l == 0)
+      if (l === 0)
         result[prop] = [];
     } else {
       var isEmpty = true;
@@ -51,15 +39,15 @@ export function flatten(data) {
 
 /* JSON unflat */
 export function unflatten(data) {
-  "use strict";
   if (Object(data) !== data || Array.isArray(data))
     return data;
   var result = {}, cur, prop, parts, idx;
   for(var p in data) {
-    cur = result, prop = "";
+    cur = result;
+    prop = "";
     parts = p.split(".");
     for(var i=0; i<parts.length; i++) {
-      idx = !isNaN(parseInt(parts[i]));
+      idx = !isNaN(parseInt(parts[i], 10));
       cur = cur[prop] || (cur[prop] = (idx ? [] : {}));
       prop = parts[i];
     }
