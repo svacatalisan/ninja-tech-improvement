@@ -16,9 +16,9 @@ const entries = [
 module.exports = {
   entry: entries,
   output: {
-    path: path.resolve(__dirname, '/js/'),
+    path: path.resolve(__dirname, '/public/js/'),
     filename: 'app.js',
-    publicPath: '/'
+    publicPath: '/js/'
   },
   devServer: {
     contentBase: path.join(__dirname, '/public/'),

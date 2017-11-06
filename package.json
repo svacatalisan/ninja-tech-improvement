@@ -35,7 +35,7 @@
     "npm-run-all": "^4.0.2"
   },
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.js --watch --env=development",
+    "start": "webpack-dev-server --config webpack.config.js --env=development",
     "build": "react-scripts build",
     "test:lint:js": "eslint --ext=js --ext=jsx .",
     "test": "react-scripts test --env=jsdom",

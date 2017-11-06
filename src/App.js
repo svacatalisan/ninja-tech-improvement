@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component{
-  componentWillMount() {}
-
-  componentDidMount() {}
-
-  shouldComponentUpdate() {
-    return true;
+  componentWillMount() {
+    console.log(1);
   }
+
+  componentDidMount() {
+    console.log(1);
+  }
+
   render() {
-    debugger;
+    console.log(1);
     return (
       <div className="App">
         <div className="App-header">
@@ -18,7 +19,7 @@ class App extends Component{
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+           Alex  are mere To get started, edit <code>src/App.js</code> and save to reload.
         </p>
       </div>
     );
