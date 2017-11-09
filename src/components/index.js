@@ -1,7 +1,6 @@
 /**
- * Created by alexcatalisan on 03.11.2017.
+ * Created by alexcatalisan on 09.11.2017.
  */
 
-export function index(component, dependency) {
-  return {};
-}
+export * from './textField/TextField';
+export * from './textField/RaisedButton';

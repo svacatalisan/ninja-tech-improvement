@@ -10,9 +10,15 @@ class App extends Component {
   componentWillMount() {
     const { cookies, i18n } = this.props;
     i18n.changeLanguage('en');
+
+    // fetchData based on source
   }
 
   render() {
+    // call build function to render components
+
+    // create initialState for components and attach it to store
+
     const { t } = this.props;
     return (
       <div className="App">

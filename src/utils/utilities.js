@@ -3,12 +3,12 @@
  */
 
 /* get data from server */
-export function get(payload) {
+export function get(url, payload) {
   return {};
 }
 
 /* send data on server */
-export function post(payload) {
+export function post(url, payload) {
   return {};
 }
 
