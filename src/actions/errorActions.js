@@ -2,12 +2,12 @@
  * Created by alexcatalisan on 09.11.2017.
  */
 
-import * as Type from './actionTypes';
+import actionTypes from './actionTypes';
 
 let nextTodoId = 0;
 
 export const submit = (payload) => ({
-  type: Type.SUBMIT,
+  type: actionTypes.SUBMIT,
   id: nextTodoId,
   text: 'Alex'
 });

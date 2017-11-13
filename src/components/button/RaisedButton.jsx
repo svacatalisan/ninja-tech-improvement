@@ -6,33 +6,23 @@
  * Created by alexcatalisan on 09.11.2017.
  */
 import React, { Component } from 'react';
+import { translate } from 'react-i18next';
 import RaisedButton from 'material-ui/RaisedButton';
 
-class RaisedButton extends Component {
+class RaisedButtonWrapper extends Component {
   constructor(props) {
     super(props)
   }
-  componentWillMount() {
-    // check if component needs data to render
-    // for example in view mode to populate it with data
-  }
-
-  componentDidMount() {
-
-  }
-
-  componentWillReceiveProps(nextProps) {
-
-  }
 
   render() {
+    const style = {
+      margin: 12
+    };
     return (
-      <RaisedButton
-        label="Default Button"
-      />
+      <RaisedButton label="Default" style={style} />
     );
   }
 }
 
-export default translate('translations')(RaisedButton);
+export default translate('translations')(RaisedButtonWrapper);
 

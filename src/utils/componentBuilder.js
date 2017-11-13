@@ -1,30 +1,28 @@
 /**
  * Created by alexcatalisan on 09.11.2017.
  */
-
-import * as components from '../components';
+import React from 'react';
+import { components } from '../components';
 
 /* Based on defined configuration build the component tree */
 export function build(config) {
-  if (!config || !config.components || Object.prototype.toString.call( config.components ) === '[object Array]')
+  if (!(config && config.components && Object.prototype.toString.call( config.components ) === '[object Array]'))
     return (<div/>);
-
-  config.components.map((item) => {
+  let children;
+  children = config.components.map((item) => {
     if (!components[item.type]) return (<div />);
     const RawComponent = buildRawComponent(item);
     const ConnectedComponent = connectComponent(RawComponent, item.connectProps, item.connectActions);
     return ConnectedComponent;
   });
+
+  return children;
 }
 
 const buildRawComponent = item => {
   const Component = components[item.type];
   return <Component
-    key={Math.random()}
-    {...item.props.default}
-    {...item.props.data}
-    {...item.validators}
-    {...item.handlers}
+    key={item.key}
   />;
 };
 

@@ -2,9 +2,9 @@
  * Created by alexcatalisan on 09.11.2017.
  */
 
-import * as actionTypes from '../actions/actionTypes';
+import actionTypes from '../actions/actionTypes';
 
-export default function errorReducer(state, action) {
+export default function errorReducer(state = {}, action) {
   switch(action.type) {
     case actionTypes.SUBMIT:
       return {

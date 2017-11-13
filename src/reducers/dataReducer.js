@@ -2,9 +2,9 @@
  * Created by alexcatalisan on 09.11.2017.
  */
 
-import * as actionTypes from '../actions/actionTypes';
+import actionTypes from '../actions/actionTypes';
 
-export default function dataReducer(state, action) {
+export default function dataReducer(state = {tesT: 'tst'}, action) {
   switch(action.type) {
     case actionTypes.SUBMIT:
       return {

@@ -39,7 +39,7 @@
   },
   "scripts": {
     "start": "npm-run-all -p start-js",
-    "start-js": "react-scripts start",
+    "start-js": "PORT=4000 react-scripts start",
     "build": "react-scripts build",
     "test:lint:js": "eslint --ext=js --ext=jsx --fix .",
     "test": "react-scripts test --env=jsdom",

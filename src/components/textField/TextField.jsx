@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import { translate } from 'react-i18next';
 import TextField from 'material-ui/TextField';
 
-class TextField extends Component {
+class TextFieldWrapper extends Component {
   constructor(props) {
     super(props)
   }
@@ -32,5 +32,5 @@ class TextField extends Component {
   }
 }
 
-export default translate('translations')(TextField);
+export default translate('translations')(TextFieldWrapper);
 
