@@ -3,7 +3,7 @@
  */
 import TextFieldWrapper from './textField/TextField';
 import RaisedButtonWrapper from './button/RaisedButton';
-import Image from './ImageLoader/Image';
+import Image from './image/Image';
 
 export const components = {
   TextField: TextFieldWrapper,

@@ -15,9 +15,9 @@
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "material-ui": "^0.19.4",
-    "react": "^15.6.1",
+    "react": "^16.0.0",
     "react-cookie": "^2.1.1",
-    "react-dom": "^15.6.1",
+    "react-dom": "^16.0.0",
     "react-i18next": "^6.1.0",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
@@ -26,7 +26,8 @@
     "redux-logger": "^3.0.6",
     "redux-mock-store": "^1.2.3",
     "redux-thunk": "^2.2.0",
-    "style-loader": "^0.13.1"
+    "style-loader": "^0.13.1",
+    "prop-types": "^15.5.7"
   },
   "devDependencies": {
     "eslint": "^4.1.1",

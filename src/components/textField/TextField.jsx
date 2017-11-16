@@ -7,26 +7,14 @@ import TextField from 'material-ui/TextField';
 
 class TextFieldWrapper extends Component {
   constructor(props) {
-    super(props)
-  }
-  componentWillMount() {
-    // check if component needs data to render
-    // for example in view mode to populate it with data
-  }
-
-  componentDidMount() {
-
-  }
-
-  componentWillReceiveProps(nextProps) {
-
+    super(props);
+    this.state={};
   }
 
   render() {
     return (
       <TextField
-        hintText="Demo Purpose"
-        floatingLabelText="Demo Purpose"
+        {...this.props}
       />
     );
   }

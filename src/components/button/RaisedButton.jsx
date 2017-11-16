@@ -11,15 +11,15 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 class RaisedButtonWrapper extends Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.state = {};
   }
 
   render() {
-    const style = {
-      margin: 12
-    };
     return (
-      <RaisedButton label="Default" style={style} />
+      <RaisedButton
+        {...this.props}
+      />
     );
   }
 }

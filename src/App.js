@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
 import { translate } from 'react-i18next';
 import { withCookies } from 'react-cookie';
 import './App.css';
@@ -17,8 +18,12 @@ const config = {
       "id": "test1",
       "key": "uniqueKey1",
       "type": "Image",
-      "staticProps": {},
-      "initState": {},
+      "staticProps": {
+        "altText": "alt text of the image",
+        "fallBackSrc": "http://labs.google.com/ridefinder/images/mm_20_blue.png",
+        "primaryImageSrc": "http://labs.google.com/ridefinder/images/mm_20_blue.png"
+      },
+      "initialState": {},
       "validators": [],
       "handlers": []
     },
@@ -26,8 +31,19 @@ const config = {
       "id": "test2",
       "key": "uniqueKey2",
       "type": "TextField",
-      "staticProps": {},
-      "initState": {},
+      // bind directly on component
+      "staticProps": {
+        "autoFocus": true,
+        "className": "inputField",
+        "floatingLabelText":"Demo Purpose",
+        "hintText":"Demo Purpose",
+        "id": "textField1"
+      },
+      // props that will go in reducer
+      "initialState": {
+        "value": "test",
+        "error": ""
+      },
       "validators": [],
       "handlers": []
     },
@@ -35,8 +51,17 @@ const config = {
       "id": "test3",
       "key": "uniqueKey3",
       "type": "TextField",
-      "staticProps": {},
-      "initState": {},
+      "staticProps": {
+        "autoFocus": false,
+        "className": "inputField",
+        "floatingLabelText":"Demo Purpose",
+        "hintText":"Demo Purpose",
+        "id": "textField1"
+      },
+      "initialState": {
+        "value": "test",
+        "succedAddedToReducer": true
+      },
       "validators": [],
       "handlers": []
     },
@@ -44,8 +69,13 @@ const config = {
       "id": "test4",
       "key": "uniqueKey4",
       "type": "RaisedButton",
-      "staticProps": {},
-      "initState": {},
+      "staticProps": {
+        "label": "Submit",
+        "style": {
+          "margin": "12"
+        }
+      },
+      "initialState": {},
       "validators": [],
       "handlers": []
     }
@@ -60,7 +90,8 @@ class App extends Component {
   }
 
   renderChildren() {
-    return build(config);
+    console.log(this.props);
+    return build(window.reducerRegistry, config);
   }
 
   render() {
@@ -78,4 +109,14 @@ class App extends Component {
   }
 }
 
-export default withCookies(translate('translations')(App));
+const mapStateToProps = (state, props) => {
+  return {
+    state: state
+  }
+};
+
+const connectedApp = connect(
+  mapStateToProps
+)(App);
+
+export default withCookies(translate('translations')(connectedApp));
