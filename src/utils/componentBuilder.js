@@ -21,18 +21,18 @@ export function build(reducerRegistry, config) {
 }
 
 /*
-* Based on an item
+* Receiving a component build it and mapStateToProps and mapDispatchToProps if necessary
 */
 const buildComponent = item => {
   const component = components[item.type];
-  const rawComponent = buildRawComponent(component, item);
-  return connectComponent(rawComponent, item.connectProps, item.connectActions);
+  return buildRawComponent(component, item);
 };
 
 const buildRawComponent = (Component, item) => {
   return <Component
     key={item.key}
     {...item.staticProps}
+    propsFromState = {item.propsFromState}
   />
 };
 
@@ -40,11 +40,3 @@ const buildReducer = (reducerRegistry, item) => {
   reducerRegistry.register("dataReducer", item.id, item.initialState);
 };
 
-const connectComponent = (Component, props, actions) => {
-  // until all the functionality will be in place
-  return Component;
-};
-
-export const mapStateToProps = (state, mapableFields) => {};
-
-export const mapDispatchToProps = (state, mapableActions) => {};

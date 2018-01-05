@@ -6,5 +6,5 @@ import { injectAsyncReducer } from './store';
 
 /* Based on defined routes, build routing manager */
 export function buildRoutingManager(routes) {
-  return {};
+    return {};
 }

@@ -39,6 +39,11 @@ const config = {
         "hintText":"Demo Purpose",
         "id": "textField1"
       },
+      "propsFromState": {
+        "dataReducer": [
+          "tesT"          
+        ]
+      },
       // props that will go in reducer
       "initialState": {
         "value": "test",
@@ -90,7 +95,6 @@ class App extends Component {
   }
 
   renderChildren() {
-    console.log(this.props);
     return build(window.reducerRegistry, config);
   }
 
@@ -110,6 +114,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state, props) => {
+  console.log(state);
   return {
     state: state
   }
@@ -119,4 +124,4 @@ const connectedApp = connect(
   mapStateToProps
 )(App);
 
-export default withCookies(translate('translations')(connectedApp));
+export default withCookies(translate('translations')(App));

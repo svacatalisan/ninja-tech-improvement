@@ -10,16 +10,15 @@ import configureReducers from '../reducers/reducers';
 const createStoreWithMiddleware = applyMiddleware(thunk, logger)(createStore);
 
 export default function configureStore(reducerRegistry) {
-  const rootReducer = configureReducers(reducerRegistry.getReducers());
-  const store = createStoreWithMiddleware(rootReducer);
+    const rootReducer = configureReducers(reducerRegistry.getReducers());
+    const store = createStoreWithMiddleware(rootReducer);
 
-  // Reconfigure the store's reducer when the reducer registry is changed - we
-  // depend on this for loading reducers via code splitting and for hot
-  // reloading reducer modules.
-  reducerRegistry.setChangeListener((reducers) => {
-    debugger;
-    store.replaceReducer(configureReducers(reducers))
-  });
+    // Reconfigure the store's reducer when the reducer registry is changed - we
+    // depend on this for loading reducers via code splitting and for hot
+    // reloading reducer modules.
+    reducerRegistry.setChangeListener((reducers) => {
+        store.replaceReducer(configureReducers(reducers))
+    });
 
-  return store
+    return store;
 };

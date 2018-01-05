@@ -34,10 +34,18 @@ class Image extends React.Component {
     );
   }
 }
-export default translate('translations')(Image);
 
 Image.propTypes = {
   altText: PropTypes.string.isRequired,
   primaryImageSrc: PropTypes.string.isRequired,
   fallBackSrc: PropTypes.string.isRequired
 };
+
+function mapStateToProps(state, ownProps) {
+  const { propsFromState } = ownProps;
+  return createStateToPropsMapping(state, propsFromState);
+}
+
+const connectedComponent = connect(mapStateToProps)(Image);
+
+export default translate('translations')(connectedComponent);

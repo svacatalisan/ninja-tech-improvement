@@ -4,10 +4,10 @@
 
 /* Whole dependecy tree */
 export function setComponentsDependencies(dependecyTree) {
-  return {};
+    return {};
 }
 
 /* Set component dependency based on defined dependencies in dependecyTree */
 export function setComponentDependency(component, dependency) {
-  return {};
+    return {};
 }
