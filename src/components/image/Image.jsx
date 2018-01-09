@@ -2,8 +2,10 @@
  * Created by alexcatalisan on 13.11.2017.
  */
 import React from 'react';
+import { connect } from 'react-redux'; 
 import PropTypes from 'prop-types';
 import { translate } from 'react-i18next';
+import { createStateToPropsMapping } from '../../utils/utilities';
 
 class Image extends React.Component {
   constructor(props) {

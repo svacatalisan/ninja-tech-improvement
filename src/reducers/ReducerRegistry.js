@@ -3,23 +3,23 @@
  */
 
 export default class ReducerRegistry {
-  constructor(initialReducers = {}) {
-    this._reducers = {...initialReducers}
-    this._emitChange = null
-  }
-  register(namespace, fieldId, newReducers) {
-    this._reducers[namespace][fieldId] = {...this._reducers[namespace][fieldId], ...newReducers};
-    if (this._emitChange != null) {
-      this._emitChange(this.getReducers())
+    constructor(initialReducers = {}) {
+        this._reducers = {...initialReducers }
+        this._emitChange = null
     }
-  }
-  getReducers() {
-    return {...this._reducers}
-  }
-  setChangeListener(listener) {
-    if (this._emitChange != null) {
-      throw new Error('Can only set the listener for a ReducerRegistry once.')
+    register(namespace, fieldId, newReducers) {
+        this._reducers[namespace][fieldId] = {...this._reducers[namespace][fieldId], ...newReducers };
+        if (this._emitChange != null) {
+            this._emitChange(this.getReducers())
+        }
     }
-    this._emitChange = listener
-  }
+    getReducers() {
+        return {...this._reducers }
+    }
+    setChangeListener(listener) {
+        if (this._emitChange != null) {
+            throw new Error('Can only set the listener for a ReducerRegistry once.')
+        }
+        this._emitChange = listener
+    }
 };

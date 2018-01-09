@@ -11,7 +11,6 @@ class TextFieldWrapper extends Component {
   constructor(props) {
     super(props);
     this.state={};
-    console.log('propsTotal', props)
   }
 
   render() {

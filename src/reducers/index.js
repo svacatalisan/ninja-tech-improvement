@@ -7,7 +7,7 @@ import InteractionReducer from './interactionReducer';
 
 
 export const coreReducers = {
-  dataReducer: DataReducer,
-  errorReducer: ErrorReducer,
-  interactionReducer: InteractionReducer
+    dataReducer: DataReducer,
+    errorReducer: ErrorReducer,
+    interactionReducer: InteractionReducer
 };

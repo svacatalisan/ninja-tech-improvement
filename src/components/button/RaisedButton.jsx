@@ -3,8 +3,10 @@
  */
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 import RaisedButton from 'material-ui/RaisedButton';
+import { createStateToPropsMapping } from '../../utils/utilities';
 
 class RaisedButtonWrapper extends Component {
   constructor(props) {

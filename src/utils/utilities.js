@@ -10,10 +10,10 @@ export function createStateToPropsMapping(state, propsFromState) {
     if (!propsFromState) return {};
 
     const mapToReturn = {};
-    Object.keys(propsFromState).map((key) => {
-        propsFromState[key].map((value) => {
+    Object.keys(propsFromState).map((reducerIdentifier) => {
+        propsFromState[reducerIdentifier].map((value) => {
             if (!value) return;
-            mapToReturn[value] = state[key][value];
+            mapToReturn[value.mappingName] = state[reducerIdentifier][value.componentName][value.propName];
         });
     });
 
