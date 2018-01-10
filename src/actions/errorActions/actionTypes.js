@@ -3,6 +3,5 @@
  */
 
 export default {
-    SUBMIT: "submit",
-    FIELD_ERROR: "field error...",
+    ATTACH_ERROR: "submit",
 };

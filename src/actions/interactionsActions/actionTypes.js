@@ -3,6 +3,5 @@
  */
 
 export default {
-    SUBMIT: "submit",
-    FIELD_ERROR: "field error...",
+    TOGGLE_COMPONENT: "toggle component",
 };

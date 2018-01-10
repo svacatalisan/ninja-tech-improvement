@@ -6,7 +6,7 @@ import actionTypes from '../actions/errorActions/actionTypes';
 
 export default function errorReducer(state = {}, action) {
     switch (action.type) {
-        case actionTypes.SUBMIT:
+        case actionTypes.ATTACH_ERROR:
             return {
                 ...state,
                 text: action.text

@@ -6,7 +6,7 @@ import actionTypes from '../actions/interactionsActions/actionTypes';
 
 export default function interactionReducer(state = {}, action) {
     switch (action.type) {
-        case actionTypes.SUBMIT:
+        case actionTypes.TOGGLE_COMPONENT:
             return {
                 ...state,
                 text: action.text

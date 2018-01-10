@@ -3,12 +3,21 @@
  */
 
 export const validatorManager = {
-    applyValidators(componentValue, validators) {
-        const errors = {};
-        return true;
+    applyValidators(currentValue, validators) {
+        const errors = [];
+        validators.each((validator) => {
+            if (![validator.type](currentValue, validator.value))
+                errors.push({'error': validator.purpose});
+        });
+        return errors;
     },
+}
 
-    regex(componentValue, regexExpression) {
-        return {};
-    }
-};
+function regex(value, regexExpression) {
+    if (regexExpression.test(value)) return true;
+    return false;
+}
+
+function fileType(value, expectedType) {
+    return {};
+}

@@ -1,3 +1,7 @@
+/**
+ * Created by alexcatalisan on 09.11.2017.
+ */
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { translate } from 'react-i18next';
@@ -54,12 +58,14 @@ const config = {
                 // for input type text, when change event is trigger, validate the data based on following criteria
                 event: 'onChange',
                 validators: [{
-                        type: 'email',
-                        regex: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                        purpose: 'email',
+                        type: 'regex',
+                        value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
                     },
                     {
-                        type: 'noSpecialCharacters',
-                        regex: /^[_A-z0-9]*((-|\s)*[_A-z0-9])*$/g
+                        purpose: 'noSpecialCharacters',
+                        type: 'regex',
+                        value: /^[_A-z0-9]*((-|\s)*[_A-z0-9])*$/g
                     }
                 ],
                 actions: [{

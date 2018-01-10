@@ -3,6 +3,7 @@
  */
 
 import { validatorManager } from '../utils/validatorManager';
+import { actions } from '../actions/index'
 
 /**
  * Generic onChange hook that will update/throw corresponding errors when the target is changed
@@ -13,11 +14,13 @@ import { validatorManager } from '../utils/validatorManager';
 export function onChange(currentValue, ownProps, behaviour) {
     const { id, dispatch } = ownProps;
     const { validators, actions } = behaviour;
-    const isComponentValid = validatorManager.applyValidators(currentValue, validators);
-    if (isComponentValid === true) {
-        console.log(currentValue)
+    const isComponentValid = validatorManager.applyValidators(currentValue, validators).length === 0;
+    if (isComponentValid) {
+        // trigger the coresponding actions: data or interaction
         return;
     }
+    // trigger the coresponding actions: error
+    return;
 }
 
 /**
