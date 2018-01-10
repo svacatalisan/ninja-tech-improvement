@@ -47,7 +47,15 @@ const mapPropsToHandlers = (rawHandlers) => {
   if (!rawHandlers || rawHandlers.constructor !== Array) return {};
   return rawHandlers.reduce((result, handler) => {
     if (!handlers[handler.event]) return {};
-    result[[handler.event]] = handlers[handler.event];
+    const {event, ...rest} = handler;
+
+    // wrapping the function in order to have the usefull this context
+    const wrappedFunction = function(ev) {
+      const currentValue = ev.target.value;
+      handlers[event](currentValue, this, rest);
+    };
+
+    result[[event]] = wrappedFunction;
     return result;
   }, {})
 };

@@ -5,7 +5,7 @@
 export const validatorManager = {
     applyValidators(componentValue, validators) {
         const errors = {};
-        return errors;
+        return true;
     },
 
     regex(componentValue, regexExpression) {
